@@ -1,14 +1,326 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/ElToro.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ArmBarn</title>
-    <script type="module" crossorigin src="/assets/index-Bndh5N29.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DAUVhd3L.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Seam — Pitch Charting & Analytics</title>
+    <meta name="description" content="Seam is the fastest way to chart, analyze, and understand pitching performance. Capture every pitch in real time and turn it into insight — right from your phone. Free on iOS." />
+    <meta name="theme-color" content="#10151A" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Seam — Pitch Charting & Analytics" />
+    <meta property="og:description" content="Chart every pitch. Win the matchup. The pitch-charting and analytics app for coaches and players." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./seam-logo.png" />
+
+    <link rel="icon" type="image/png" href="./seam-logo.png" />
+    <link rel="apple-touch-icon" href="./seam-logo.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div id="root"></div>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="./index.html" class="nav-brand">
+          <img src="./seam-logo.png" alt="Seam" class="brand-logo" />
+          <span class="brand-name">Seam</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#analytics">Analytics</a>
+          <a href="#pro">Seam Pro</a>
+        </div>
+        <a href="https://apps.apple.com/us/app/armbarn/id6503445937" class="btn btn-primary nav-cta">Download</a>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="speed-lines" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="hero-inner">
+          <div class="hero-text">
+            <div class="eyebrow">Chart · Analyze · Dominate</div>
+            <h1 class="hero-title">Chart Every Pitch.<br /><span class="accent">Win The Matchup.</span></h1>
+            <p class="hero-body">
+              Seam is the fastest way to chart, analyze, and understand pitching performance —
+              capturing every pitch in real time and turning it into insight, right from your phone.
+            </p>
+            <div class="hero-actions">
+              <a href="https://apps.apple.com/us/app/armbarn/id6503445937" class="appstore" aria-label="Download on the App Store">
+                <img src="./DownloadButton.svg" alt="Download on the App Store" />
+              </a>
+              <span class="hero-note"><b>Free on iOS.</b> Seam Pro available.</span>
+            </div>
+          </div>
+
+          <div class="hero-phones">
+            <img class="phone phone--back" src="./InGameStats.webp" alt="Seam in-game game log" width="1242" height="2688" />
+            <img class="phone phone--front" src="./MainDashboard.webp" alt="Seam live pitch charting screen" width="1242" height="2688" />
+          </div>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true">Scroll<span></span></div>
+      </section>
+
+      <!-- STATS STRIP -->
+      <section class="strip">
+        <div class="strip-inner container">
+          <div class="strip-item">
+            <div class="strip-num">Live</div>
+            <div class="strip-label">Real-time pitch charting</div>
+          </div>
+          <div class="strip-item">
+            <div class="strip-num">Deep</div>
+            <div class="strip-label">Advanced staff analytics</div>
+          </div>
+          <div class="strip-item">
+            <div class="strip-num">Offline</div>
+            <div class="strip-label">Works without a signal</div>
+          </div>
+          <div class="strip-item">
+            <div class="strip-num">iOS</div>
+            <div class="strip-label">Built for iPhone</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="features container" id="features">
+        <div class="section-head reveal">
+          <div class="eyebrow" style="justify-content:center">What Seam Does</div>
+          <h2>Everything You Need On The Mound</h2>
+          <p>From the first warm-up toss to the final out — capture it, break it down, and act on it.</p>
+        </div>
+
+        <!-- 1 -->
+        <div class="feature reveal">
+          <div class="feature-text">
+            <span class="feature-tag">Live Charting</span>
+            <h2 class="feature-heading">Chart Every Pitch, Every Game</h2>
+            <p>Record pitches in real time with an interface built for the speed of the game. Tap location, type, result, and velocity so nothing slips through the cracks.</p>
+            <ul class="feature-list">
+              <li>Plot exact pitch location on the strike zone</li>
+              <li>Track pitch type, velocity, and result in one tap</li>
+              <li>Live count, outs, and batters-faced always in view</li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <div class="device"><img src="./PlainDashboard.webp" alt="Live pitch charting on the field view" loading="lazy" /></div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="feature feature--flip reveal" id="analytics">
+          <div class="feature-text">
+            <span class="feature-tag">Analytics</span>
+            <h2 class="feature-heading">Stats That Tell The Story</h2>
+            <p>The moment the game ends, Seam turns your chart into a full breakdown — staff box score, strike percentage, first-pitch strike rate, and an overall game score.</p>
+            <ul class="feature-list">
+              <li>Staff &amp; per-pitcher box scores</li>
+              <li>Strike % and first-pitch-strike % at a glance</li>
+              <li>Game Score built on a run-expectancy model</li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <div class="device"><img src="./StatsLeft.webp" alt="Seam post-game analytics and game score" loading="lazy" /></div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="feature reveal">
+          <div class="feature-text">
+            <span class="feature-tag">Visualize</span>
+            <h2 class="feature-heading">See Every Pitch In Context</h2>
+            <p>The pitch-location map plots every pitch by type so tendencies jump off the screen. Filter by pitcher, count, result, or batter hand to answer any question in seconds.</p>
+            <ul class="feature-list">
+              <li>Color-coded location map by pitch type</li>
+              <li>Filter by count, result, and batter handedness</li>
+              <li>Spot patterns across an outing instantly</li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <div class="device"><img src="./StatsRight.webp" alt="Seam pitch-location map with filters" loading="lazy" /></div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="feature feature--flip reveal" id="gamelog">
+          <div class="feature-text">
+            <span class="feature-tag">Game Log</span>
+            <h2 class="feature-heading">The Whole Outing, Pitch By Pitch</h2>
+            <p>Every pitch is logged in order with type, velocity, result, and the count it came in — grouped by inning and batter, with a running line score as the game unfolds.</p>
+            <ul class="feature-list">
+              <li>Color-coded by pitch type with velocity and result</li>
+              <li>Broken out by inning, batter, and handedness</li>
+              <li>Running PC, BF, H, SO, and BB totals per inning</li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <div class="device"><img src="./GameLog.webp" alt="Seam game log showing every pitch by inning and batter" loading="lazy" /></div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="feature reveal">
+          <div class="feature-text">
+            <span class="feature-tag">Workflow</span>
+            <h2 class="feature-heading">Built Around Your Roster</h2>
+            <p>Save pitcher profiles to keep your staff organized and start a new game in seconds. Revisit any saved game for post-game analysis whenever you need it.</p>
+            <ul class="feature-list">
+              <li>Reusable pitcher profiles with their arsenals</li>
+              <li>Every game saved and ready to review</li>
+              <li>Configure velocity input and your units</li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <div class="device device--stack">
+              <img src="./Pitchers.webp" alt="Seam pitcher roster" loading="lazy" />
+              <img src="./SavedGames.webp" alt="Seam saved games list" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEAM PRO -->
+      <section class="pro container" id="pro">
+        <div class="pro-banner reveal">
+          <div class="pro-text">
+            <span class="pro-badge">Seam Pro</span>
+            <h2 class="pro-title">Take It To<br /><span>The Next Level</span></h2>
+            <p class="pro-copy">
+              Seam Pro keeps your entire program in sync. Back up every chart to the cloud, work across
+              all your devices, and make smarter calls from the dugout.
+            </p>
+            <a href="https://apps.apple.com/us/app/armbarn/id6503445937" class="appstore" aria-label="Download on the App Store">
+              <img src="./DownloadButton.svg" alt="Download on the App Store" />
+            </a>
+          </div>
+          <div class="pro-list">
+            <div class="pro-item">
+              <span class="pro-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+              </span>
+              <div>
+                <h4>Cloud Backup</h4>
+                <p>Every chart saved securely to the cloud with industry-standard encryption.</p>
+              </div>
+            </div>
+            <div class="pro-item">
+              <span class="pro-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4M2 11h20"/></svg>
+              </span>
+              <div>
+                <h4>Unlimited Devices</h4>
+                <p>Sign in anywhere and pick up right where you left off — no limits.</p>
+              </div>
+            </div>
+            <div class="pro-item">
+              <span class="pro-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0M8.5 16.1a6 6 0 0 1 7 0M2 8.82a15 15 0 0 1 20 0"/><line x1="12" y1="20" x2="12" y2="20"/></svg>
+              </span>
+              <div>
+                <h4>Offline Sync</h4>
+                <p>Chart with no signal — everything syncs the moment you reconnect.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MORE -->
+      <section class="more">
+        <div class="more-inner container">
+          <div class="section-head reveal">
+            <div class="eyebrow" style="justify-content:center">And More</div>
+            <h2>Focused On The Game</h2>
+            <p>No clutter, no noise — just the tools that help you get better.</p>
+          </div>
+          <div class="more-grid">
+            <div class="more-card reveal">
+              <span class="more-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </span>
+              <h4>Private By Default</h4>
+              <p>Your data is yours. Without an account, everything stays on your device — Seam never sells your information.</p>
+            </div>
+            <div class="more-card reveal">
+              <span class="more-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.9" y1="4.9" x2="19.1" y2="19.1"/></svg>
+              </span>
+              <h4>Zero Ads</h4>
+              <p>Your focus belongs on the field — not on dismissing pop-ups. Seam is completely ad-free.</p>
+            </div>
+            <div class="more-card reveal">
+              <span class="more-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>
+              </span>
+              <h4>Ready Anywhere</h4>
+              <p>No connection required. Chart a game from any field, any time, and sync up when you're back online.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="cta">
+        <div class="cta-inner container reveal">
+          <h2>Start Charting <span>Today</span></h2>
+          <p>From rec leagues to the pros — Seam is your pitch-charting companion. Download free and chart your first game in minutes.</p>
+          <div class="cta-actions">
+            <a href="https://apps.apple.com/us/app/armbarn/id6503445937" class="appstore" aria-label="Download on the App Store">
+              <img src="./DownloadButton.svg" alt="Download on the App Store" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-top">
+            <div>
+              <a href="./index.html" class="footer-brand">
+                <img src="./seam-logo.png" alt="Seam" class="brand-logo" />
+                <span class="brand-name">Seam</span>
+              </a>
+              <p class="footer-tagline">The pitch-charting and analytics app for coaches and players who want to understand the game.</p>
+            </div>
+            <div class="footer-cols">
+              <div class="footer-col">
+                <h5>Product</h5>
+                <a href="#features">Features</a>
+                <a href="#analytics">Analytics</a>
+                <a href="#pro">Seam Pro</a>
+                <a href="https://apps.apple.com/us/app/armbarn/id6503445937">Download</a>
+              </div>
+              <div class="footer-col">
+                <h5>Company</h5>
+                <a href="./privatepolicy.html">Privacy Policy</a>
+                <a href="./termsofservice.html">Terms of Service</a>
+                <a href="./helpandsupport.html">Help &amp; Support</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <span>&copy; <span id="year">2026</span> LGT Productions. All rights reserved.</span>
+            <span>Made for the game of baseball.</span>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+
+    <script src="index.js"></script>
   </body>
 </html>

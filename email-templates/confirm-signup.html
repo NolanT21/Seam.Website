@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirm your account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #D2113A;
+      --red-deep: #A50D2E;
+      --bg: #0C1015;
+      --card: #141B22;
+      --border: rgba(255,255,255,0.08);
+      --text: #F3F6F9;
+      --text-muted: #9AA7B4;
+      --text-dim: #5F6E7C;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'Barlow', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      padding: 48px 16px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 55% 55% at 50% 30%, rgba(210,17,58,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 40% at 10% 90%, rgba(165,13,46,0.16) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .wrapper {
+      max-width: 520px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Header */
+    .header {
+      background: #10151A;
+      border: 1px solid var(--border);
+      border-bottom: none;
+      border-radius: 12px 12px 0 0;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      background: var(--red);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-mark svg { width: 14px; height: 14px; }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    /* Card */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 1px solid rgba(210,17,58,0.28);
+      padding: 48px 40px 40px;
+      text-align: center;
+    }
+
+    /* Check icon */
+    .check-wrap {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 28px;
+      position: relative;
+    }
+
+    .check-ring {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 2px solid rgba(210,17,58,0.30);
+      background: rgba(210,17,58,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.1s both;
+    }
+
+    .check-ring svg { width: 30px; height: 30px; }
+
+    .check-ring svg polyline {
+      stroke-dasharray: 60;
+      stroke-dashoffset: 60;
+      animation: drawCheck 0.4s ease 0.45s forwards;
+    }
+
+    .check-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px solid rgba(210,17,58,0.20);
+      animation: pulse 2.5s ease 0.9s infinite;
+    }
+
+    /* Eyebrow */
+    .eyebrow {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--red);
+      border-radius: 2px;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 8vw, 3.8rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 0.95;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+
+    h1 span { color: var(--red); }
+
+    .body-text {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 360px;
+      margin: 0 auto 36px;
+    }
+
+    /* CTA */
+    .btn {
+      display: inline-block;
+      background: var(--red);
+      color: #fff !important;
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 15px 40px;
+      border-radius: 10px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn:hover {
+      background: var(--red-deep);
+      transform: translateY(-2px);
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 36px 0 28px;
+    }
+
+    /* Fallback link */
+    .fallback {
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    .fallback a {
+      color: var(--red);
+      word-break: break-all;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    .footer {
+      background: #10151A;
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+      padding: 18px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-note {
+      font-size: 11.5px;
+      color: var(--text-dim);
+    }
+
+    .footer-note a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .expiry-badge {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: rgba(210,17,58,0.12);
+      border: 1px solid rgba(210,17,58,0.28);
+      padding: 4px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.5); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes pulse {
+      0%   { transform: scale(1);    opacity: 0.6; }
+      70%  { transform: scale(1.35); opacity: 0; }
+      100% { transform: scale(1.35); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <div class="header">
+      <img src="https://xdmpkzlexcmdigmxxtvb.supabase.co/storage/v1/object/public/Seam%20Logo/seam-logo.png" alt="Seam" width="40" height="40" style="display:block; border-radius:8px;"/>
+      <span class="brand-name">Seam</span>
+    </div>
+
+    <!-- Card -->
+    <div class="card">
+
+      <div class="eyebrow">One more step</div>
+
+      <h1>Confirm<br/><span>Your Email</span></h1>
+
+      <p class="body-text">
+        To activate your account verify your email address below.
+      </p>
+
+      <a href="{{ .ConfirmationURL }}" class="btn">Confirm email</a>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="footer-note">
+        Didn't sign up? <a href="https://getarmbarn.com/helpandsupport.html">Let us know</a>.
+      </span>
+      <span class="expiry-badge">Expires in 24h</span>
+    </div>
+
+  </div>
+</body>
+</html>
